@@ -1,18 +1,4 @@
-# List tmux sessions
-alias tl="tmux ls"
-# Create tmux session with name
-alias tn="tmux new -s"
-# Attach to tmux session with name
-alias ta="tmux attach -t"
-# Kill tmux session with name
-alias tk="tmux kill-session -t"
-# Start PostgreSQL
-alias startpostgresql="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-# Stop PostgreSQL
-alias stoppostgresql="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 # Kill everything running on a specific port
 function killport() {
   kill $(lsof -iTCP -sTCP:LISTEN -n -P | grep $1 | awk '{print $2}')
 }
-# Rip a video with ffmpeg
-alias rip="~/Developer/dotfiles/scripts/rip-with-ffmpeg.sh $@"
