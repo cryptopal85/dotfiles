@@ -9,7 +9,7 @@ if [[ -f "~/.zshrc.local" ]]; then
 fi
 
 # Set theme
-ZSH_THEME="kolo"
+ZSH_THEME="spaceship"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -60,3 +60,11 @@ PS1="\$(__pyenv_version_ps1)${PS1}"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/gurkanhuray/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+# Created by `pipx` on 2022-04-13 23:21:31
+export PATH="$PATH:/Users/gurkanhuray/.local/bin"
+
+autoload -U promptinit; promptinit
+prompt spaceship
