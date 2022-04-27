@@ -8,20 +8,35 @@ if [[ -f "~/.zshrc.local" ]]; then
   source ~/.zshrc.local
 fi
 
+# zsh completions - Homebrew
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# homebrew completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
 # Set theme
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo git macos macports brew chucknorris zsh-completions zsh-syntax-highlighting)
-
-export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/homebrew/bin"
-source ~/.oh-my-zsh/oh-my-zsh.sh
-
-# /usr/local/bin takes precedence over /usr/bin
-export PATH="/usr/local/bin:$PATH"
+plugins=(sudo git macos brew chucknorris)
 
 # pyenv
 # https://github.com/pyenv/pyenv
@@ -57,14 +72,14 @@ __pyenv_version_ps1() {
 }
 PS1="\$(__pyenv_version_ps1)${PS1}"
 
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/gurkanhuray/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 # Created by `pipx` on 2022-04-13 23:21:31
 export PATH="$PATH:/Users/gurkanhuray/.local/bin"
 
-autoload -U promptinit; promptinit
-prompt spaceship
+# source oh my zsh
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/homebrew/bin"
+source ~/.oh-my-zsh/oh-my-zsh.sh
+
+# source syntax highlighting - Homebrew
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
