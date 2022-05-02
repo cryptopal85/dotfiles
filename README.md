@@ -18,27 +18,7 @@ To stow a directory, run `stow` followed by the directory name, e.g. `stow git`.
 
 ### Notes
 
-This secton contains notes on setting up specfic tools.
-
-#### gnupg
-
-Used for [signing git commits](https://docs.github.com/en/github/authenticating-to-github/signing-commits). gnupg and pinentry-mac must be installed with Homebrew.
-
-```bash
-brew install gnupg pinentry-mac
-```
-
-Make sure to stow both the git and gnupg folders so all the settings are in place. Then import the GPG private key.
-
-```bash
-gpg --import gnupg-private-key.asc
-```
-
-Verify that it's imported by running the following command.
-
-```bash
-gpg --list-keys
-```
+This section contains notes on setting up specific tools.
 
 #### iTerm2
 
