@@ -785,7 +785,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>160</integer>
+			<integer>158</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Color</key>
