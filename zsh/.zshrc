@@ -8,7 +8,7 @@ if [[ -f "~/.zshrc.local" ]]; then
   source ~/.zshrc.local
 fi
 
-# zsh completions - Homebrew
+# zsh completions - Homebrew ARM
 if type brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
 
@@ -16,7 +16,7 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-# homebrew completions
+# Homebrew completions
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -25,7 +25,7 @@ then
   compinit
 fi
 
-# prompt
+# Prompt - Spaceship
 autoload -U promptinit; promptinit
 prompt spaceship
 
@@ -81,5 +81,5 @@ export PATH="$PATH:/Users/gurkanhuray/.local/bin"
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/homebrew/bin"
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
-# source syntax highlighting - Homebrew
+# source syntax highlighting - Homebrew ARM
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
