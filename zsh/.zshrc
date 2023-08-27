@@ -26,11 +26,11 @@ then
 fi
 
 # Prompt - Spaceship
-autoload -U promptinit; promptinit
-prompt spaceship
+#autoload -U promptinit; promptinit
+#prompt spaceship
 
 # Set theme
-# ZSH_THEME="spaceship"
+ZSH_THEME="spaceship"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -75,7 +75,7 @@ PS1="\$(__pyenv_version_ps1)${PS1}"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # Created by `pipx` on 2022-04-13 23:21:31
-export PATH="$PATH:/Users/gurkanhuray/.local/bin"
+export PATH="$PATH:/Users/gurkan/.local/bin"
 
 # source oh my zsh
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/homebrew/bin"
